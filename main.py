@@ -11,7 +11,7 @@ from tkinter import *
 root = Tk()
 
 txt = StringVar()
-txt.set("why do we all must to wear those ridiculous ties?! Freeman, STAP!")
+txt.set("")
 res = StringVar()
 
 def pos_tag_sentence(sent):

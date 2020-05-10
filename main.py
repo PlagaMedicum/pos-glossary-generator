@@ -2,7 +2,6 @@ import nltk
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
 from nltk.tokenize import PunktSentenceTokenizer
-#from nltk.corpus import treebank
 from nltk.data import load
 
 import re
@@ -26,22 +25,6 @@ def pos_tag_sentence(sent):
         i += 1
     return rtgs
 
-"""
-grammar = nltk.data.load('file:grammar.cfg')
-
-def extract_pos_tags(sent):
-    ext = list()
-    for s in sent:
-        ext.append(s[1])
-    return ext
-
-def parse_grammar(sent):
-    sent = extract_pos_tags(sent)
-    rd_parser = nltk.RecursiveDescentParser(grammar)
-    for tree in rd_parser.parse(sent):
-        print(tree)
-"""
-
 tagdict = load('help/tagsets/upenn_tagset.pickle')
 
 def tag_text():
@@ -50,7 +33,6 @@ def tag_text():
     for sent in sentences:
         out += "--- Sentence: {}\n".format(sent)
         tsent = pos_tag_sentence(sent)
-        #parse_grammar(tsent)
         i = 0
         while i < len(tsent):
             pt = tsent[i]
